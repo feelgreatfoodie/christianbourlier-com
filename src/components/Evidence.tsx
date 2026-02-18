@@ -113,14 +113,24 @@ function Skills() {
 
 function Testimonials() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [direction, setDirection] = useState(1);
   const [paused, setPaused] = useState(false);
+
+  const goNext = () => {
+    setDirection(1);
+    setActiveIndex((prev) => (prev + 1) % testimonials.length);
+  };
+
+  const goPrev = () => {
+    setDirection(-1);
+    setActiveIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
 
   useEffect(() => {
     if (paused) return;
-    const timer = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % testimonials.length);
-    }, 6000);
+    const timer = setInterval(goNext, 6000);
     return () => clearInterval(timer);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [paused, activeIndex]);
 
   return (
@@ -130,41 +140,65 @@ function Testimonials() {
       onFocus={() => setPaused(true)}
       onBlur={() => setPaused(false)}
     >
-      <div className="relative min-h-[240px]">
-        <AnimatePresence mode="wait">
-          <motion.blockquote
-            key={activeIndex}
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -20 }}
-            transition={{ duration: 0.4 }}
-            className="absolute inset-0"
-          >
-            <div className="border-l-2 border-accent-active/30 pl-6 py-2 relative overflow-hidden">
-              {!paused && (
-                <motion.div
-                  key={`progress-${activeIndex}`}
-                  className="absolute left-0 top-0 w-0.5 bg-accent-active"
-                  initial={{ height: "0%" }}
-                  animate={{ height: "100%" }}
-                  transition={{ duration: 6, ease: "linear" }}
-                />
-              )}
-              <p className="text-lg font-light leading-relaxed text-text-primary mb-6 italic">
-                &ldquo;{testimonials[activeIndex].quote}&rdquo;
-              </p>
-              <footer>
-                <span className="text-sm text-accent-warm font-normal">
-                  {testimonials[activeIndex].author}
-                </span>
-                <span className="text-text-secondary text-sm font-light">
-                  {" "}
-                  &mdash; {testimonials[activeIndex].title}
-                </span>
-              </footer>
-            </div>
-          </motion.blockquote>
-        </AnimatePresence>
+      <div className="flex items-center gap-4">
+        {/* Prev arrow */}
+        <button
+          onClick={goPrev}
+          aria-label="Previous testimonial"
+          className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full text-text-secondary/30 hover:text-text-secondary/70 transition-colors duration-200"
+        >
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+            <path d="M10 3L5 8l5 5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
+
+        <div className="relative min-h-[240px] flex-1">
+          <AnimatePresence mode="wait">
+            <motion.blockquote
+              key={activeIndex}
+              initial={{ opacity: 0, x: direction > 0 ? 24 : -24 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: direction > 0 ? -24 : 24 }}
+              transition={{ duration: 0.35 }}
+              className="absolute inset-0"
+            >
+              <div className="border-l-2 border-accent-active/30 pl-6 py-2 relative overflow-hidden">
+                {!paused && (
+                  <motion.div
+                    key={`progress-${activeIndex}`}
+                    className="absolute left-0 top-0 w-0.5 bg-accent-active"
+                    initial={{ height: "0%" }}
+                    animate={{ height: "100%" }}
+                    transition={{ duration: 6, ease: "linear" }}
+                  />
+                )}
+                <p className="text-lg font-light leading-relaxed text-text-primary mb-6 italic">
+                  &ldquo;{testimonials[activeIndex].quote}&rdquo;
+                </p>
+                <footer>
+                  <span className="text-sm text-accent-warm font-normal">
+                    {testimonials[activeIndex].author}
+                  </span>
+                  <span className="text-text-secondary text-sm font-light">
+                    {" "}
+                    &mdash; {testimonials[activeIndex].title}
+                  </span>
+                </footer>
+              </div>
+            </motion.blockquote>
+          </AnimatePresence>
+        </div>
+
+        {/* Next arrow */}
+        <button
+          onClick={goNext}
+          aria-label="Next testimonial"
+          className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full text-text-secondary/30 hover:text-text-secondary/70 transition-colors duration-200"
+        >
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+            <path d="M6 3l5 5-5 5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
       </div>
 
       {/* Dots */}
@@ -172,7 +206,7 @@ function Testimonials() {
         {testimonials.map((_, i) => (
           <button
             key={i}
-            onClick={() => setActiveIndex(i)}
+            onClick={() => { setDirection(i > activeIndex ? 1 : -1); setActiveIndex(i); }}
             className={`h-2 rounded-full transition-all duration-300 ${
               i === activeIndex
                 ? "bg-accent-active w-6"
