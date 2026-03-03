@@ -7,7 +7,7 @@ export const siteConfig = {
   name: "Christian Bourlier",
   title: "Christian Bourlier — AI Systems Architect",
   description:
-    "I architect production AI systems where autonomous agents perform reliable, governed work at scale. 58-tool MCP server. Multi-agent orchestration. Full audit coverage. Building on Claude.",
+    "I architect production AI systems where autonomous agents perform reliable, governed work at scale. Multi-agent orchestration. Full audit coverage. Building on Claude.",
   url: "https://bourlier.ai",
   email: "christian@bourlier.ai",
   linkedin: "https://linkedin.com/in/christianbourlier",
@@ -21,10 +21,9 @@ export const hero = {
   subtitle: "AI Systems Architect",
   tagline: "Bounded AI systems that ship.",
   description:
-    "I architect the production infrastructure where LLMs perform reliable, governed work within enterprise constraints. Author of CacheBash — a 58-tool MCP server powering multi-agent orchestration with identity isolation, policy-gated tool use, and full audit coverage.",
+    "I architect the production infrastructure where LLMs perform reliable, governed work within enterprise constraints. I build production MCP servers powering multi-agent orchestration with identity isolation, policy-gated tool use, and full audit coverage.",
   metrics: [
     { value: "4", label: "Production AI Systems" },
-    { value: "58", label: "MCP Tools" },
     { value: "100%", label: "Audit Coverage" },
     { value: "0", label: "Uncontained Failures" },
     { value: "6mo→6wk", label: "Modeling Latency Reduction" },
@@ -46,7 +45,7 @@ export const systems = [
     name: "CacheBash",
     slug: "mcp-relay + persistent-task-state",
     description:
-      "Production MCP server with 58 tool endpoints for multi-agent coordination on Claude Code: transactional task claiming, relay messaging with dead letter containment, persistent agent memory, and autonomous fleet operations across concurrent AI sessions.",
+      "Production MCP server for multi-agent coordination on Claude Code: transactional task claiming, relay messaging with dead letter containment, persistent agent memory, and autonomous fleet operations across concurrent AI sessions.",
     stack: ["Cloud Run", "Firestore", "TypeScript", "MCP Protocol"],
     details: [
       "Transactional task claiming with dead-letter containment",
@@ -62,7 +61,7 @@ export const systems = [
     name: "Rezzed.ai",
     slug: "bounded-multi-agent-orchestration",
     description:
-      "Role-specialized multi-agent system where 10+ LLM-powered agents operate within identity-scoped boundaries, static context budgets, and pre-tool-use policy gates. Hierarchical Planner\u2192Worker topology routes reasoning to high-capability models and execution to cost-efficient tiers.",
+      "Role-specialized multi-agent system where 10+ LLM-powered agents operate within identity-scoped boundaries, static context budgets, and pre-tool-use policy gates. Hierarchical Planner→Worker topology routes reasoning to high-capability models and execution to cost-efficient tiers.",
     stack: ["Claude Code", "Vertex AI", "MCP", "Cloud Run"],
     details: [
       "Every tool call policy-gated and audit-logged",
@@ -104,7 +103,7 @@ export const instrumentation = {
   title: "// instrumentation",
   items: [
     "Completion semantics (SUCCESS / FAILED / SKIPPED / CANCELLED)",
-    "Error taxonomy \u2014 6 classification tiers",
+    "Error taxonomy — 6 classification tiers",
     "Distributed tracing across agent spans",
     "Cost, token, latency rollups per program and period",
     "Comms delivery metrics and dead letter monitoring",
@@ -186,35 +185,35 @@ export const timeline = [
   {
     year: "2025",
     endYear: "present",
-    title: "Founder & Principal Architect \u2014 Rezzed.ai",
+    title: "Founder & Principal Architect — Rezzed.ai",
     description:
       "AI-native tooling studio. CacheBash MCP server, multi-agent orchestration framework, 10 open source packages on npm. Bounded systems that ship.",
   },
   {
     year: "2025",
     endYear: "present",
-    title: "Co-Founder & Principal Architect \u2014 Three Bears Data",
+    title: "Co-Founder & Principal Architect — Three Bears Data",
     description:
-      "Marketing measurement studio. Architected OptiMeasure \u2014 cookieless attribution engine (Python/Vertex AI). 3 clients in contracts.",
+      "Marketing measurement studio. Architected OptiMeasure — cookieless attribution engine (Python/Vertex AI). 3 clients in contracts.",
   },
   {
     year: "2021",
     endYear: "2025",
-    title: "Data Engineer \u2192 Senior Data Engineer \u2014 Monks",
+    title: "Data Engineer → Senior Data Engineer — Monks",
     description:
       "High-availability data pipelines processing 60M+ daily records at 99.9% uptime. Privacy-preserving analytics optimizing $10M+ in media spend. Mentored 8 engineers (75% promotion rate).",
   },
   {
     year: "2019",
     endYear: "2021",
-    title: "Technical Solutions Engineer \u2192 Data Scientist \u2014 MightyHive",
+    title: "Technical Solutions Engineer → Data Scientist — MightyHive",
     description:
-      "Predictive modeling with clean room data. Refactored legacy systems into production microservices \u2014 10x throughput improvement.",
+      "Predictive modeling with clean room data. Refactored legacy systems into production microservices — 10x throughput improvement.",
   },
   {
     year: "2018",
     endYear: "2019",
-    title: "Software Engineering \u2014 Hack Reactor @ Galvanize",
+    title: "Software Engineering — Hack Reactor @ Galvanize",
     description:
       "Immersive engineering program. The pivot from operations to code.",
   },
@@ -230,7 +229,7 @@ export const timeline = [
 export const testimonials = [
   {
     quote:
-      "He does not just build things \u2014 he thinks about the whole system. He went from zero familiarity to owning the implementation within weeks. He moves comfortably between the technical and business sides without losing depth in either. That combination is rare.",
+      "He does not just build things — he thinks about the whole system. He went from zero familiarity to owning the implementation within weeks. He moves comfortably between the technical and business sides without losing depth in either. That combination is rare.",
     author: "Puneet Gangrade",
     title: "Data Science & Engineering Lead, Monks",
   },
