@@ -47,23 +47,11 @@ export const metadata: Metadata = {
     title: "Christian Bourlier — AI Systems Architect",
     description: "Bounded AI systems that ship. 3 production systems. 60+ MCP tools. 100% audit coverage. 0 uncontained failures.",
     siteName: "bourlier.ai",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Christian Bourlier — AI Systems Architect | CacheBash",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Christian Bourlier — AI Systems Architect",
     description: "Bounded AI systems that ship. Production AI infrastructure with governance, safety, and verifiable evidence.",
-    images: ["/og-image.png"],
-  },
-  icons: {
-    apple: "/apple-touch-icon.png",
   },
   robots: {
     index: true,

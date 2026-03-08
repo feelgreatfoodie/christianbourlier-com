@@ -21,12 +21,12 @@ ABOUT CHRISTIAN:
 CORE IDENTITY & POSITIONING:
 "I architect production AI systems where autonomous agents perform reliable, governed work at scale."
 
-Author of CacheBash — a 58-tool MCP server powering multi-agent orchestration with identity isolation, policy-gated tool use, and full audit coverage.
+Author of CacheBash — a 60+ tool MCP server powering multi-agent orchestration with identity isolation, policy-gated tool use, and full audit coverage.
 
 PRODUCTION SYSTEMS (what's running):
 
 1. CacheBash
-   - Production MCP server with 58 tool endpoints for multi-agent coordination on Claude Code
+   - Production MCP server with 60+ tool endpoints for multi-agent coordination on Claude Code
    - Transactional task claiming, relay messaging with dead letter containment, persistent agent memory
    - Autonomous fleet operations across concurrent AI sessions
    - Stack: Cloud Run, Firestore, TypeScript, MCP Protocol
@@ -59,7 +59,7 @@ PRODUCTION SYSTEMS (what's running):
 
 METRICS:
 - 4 Production AI Systems
-- 58 MCP Tools (in CacheBash)
+- 60+ MCP Tools (in CacheBash)
 - 100% Audit Coverage
 - 0 Uncontained Failures
 - 6mo→6wk (Modeling Latency Reduction)
@@ -238,12 +238,12 @@ class MockProvider implements AIProvider {
     {
       pattern: /experience|background|about/i,
       response:
-        "Christian is an AI Systems Architect who architects production AI systems where autonomous agents perform reliable, governed work at scale. He's the founder of Rezzed.ai and author of CacheBash — a 58-tool MCP server. He has 6+ years in data engineering, a decade of professional poker, and now builds bounded systems that ship.",
+        "Christian is an AI Systems Architect who architects production AI systems where autonomous agents perform reliable, governed work at scale. He's the founder of Rezzed.ai and author of CacheBash — a 60+ tool MCP server. He has 6+ years in data engineering, a decade of professional poker, and now builds bounded systems that ship.",
     },
     {
       pattern: /cachebash|mcp|server/i,
       response:
-        "CacheBash is Christian's production MCP server with 58 tool endpoints for multi-agent coordination on Claude Code. It handles transactional task claiming, relay messaging with dead letter containment, persistent agent memory, and autonomous fleet operations. It's live on npm.",
+        "CacheBash is Christian's production MCP server with 60+ tool endpoints for multi-agent coordination on Claude Code. It handles transactional task claiming, relay messaging with dead letter containment, persistent agent memory, and autonomous fleet operations. It's live on npm.",
     },
     {
       pattern: /skill|tech|stack|language/i,
@@ -253,7 +253,7 @@ class MockProvider implements AIProvider {
     {
       pattern: /project|build|system|rezzed/i,
       response:
-        "Christian has 4 production AI systems: CacheBash (58-tool MCP server), Rezzed.ai (multi-agent orchestration with 10+ agents), OptiMeasure (cookieless attribution engine), and Bourlier.ai (this site). All are live in production with 100% audit coverage and zero uncontained failures.",
+        "Christian has 4 production AI systems: CacheBash (60+ tool MCP server), Rezzed.ai (multi-agent orchestration with 10+ agents), OptiMeasure (cookieless attribution engine), and Bourlier.ai (this site). All are live in production with 100% audit coverage and zero uncontained failures.",
     },
     {
       pattern: /contact|hire|work with|reach/i,
