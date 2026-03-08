@@ -4,6 +4,7 @@ import "./globals.css";
 import { KonamiOverlay } from "@/components/KonamiOverlay";
 import { CursorTrail } from "@/components/CursorTrail";
 import { ScrollProgress } from "@/components/ScrollProgress";
+import { ChatWidget } from "@/components/ChatWidget";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -110,6 +111,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <ScrollProgress />
         <KonamiOverlay />
         <CursorTrail />
+        <ChatWidget />
         {children}
       </body>
     </html>
